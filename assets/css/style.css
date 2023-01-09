@@ -1,0 +1,121 @@
+html, body{
+    margin:0;
+    padding:0;
+    background-color: #333333;
+    font-family: 'DM Serif Display', serif;
+}
+
+.movieTitle{
+   text-align: center;
+   font-size:30px ;
+   background-color: lightblue;
+   border-radius: 17%;
+   border:solid;
+   border-color: black;
+   border-style: solid;
+   width: 25rem;
+   height: 0rem;
+   text-decoration: underline;
+   justify-content: center;
+   color: black;
+   flex-wrap: wrap;
+   flex-direction: column;
+   text-align: center;
+
+  
+}
+
+#pageAc{
+    text-align: center;
+    font-size: 9rem;
+    color: lightcyan;
+    text-align: left;
+    text-shadow: 5px 5px 5px black;
+    border:solid;
+    text-decoration: underline;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+
+   
+}
+
+.navbar-item{
+   display: inline-block;
+   left: 50%;
+   margin-left: 5rem;
+   top: -5rem;
+   flex-wrap: wrap;
+   flex-direction: column;
+}
+
+#searchBar{
+    flex-wrap: wrap;
+    flex-direction: column;
+    border-style: solid;
+    width: 15rem;
+    border-color:black;
+}
+.btn{
+    border-radius: 0%;
+    border-color: black;
+    border: solid;
+    font-size: 1.3rem;
+    background-color: lightblue;
+    color: black;
+    width: 12rem;
+    text-align: center;
+
+}
+.btn:hover{
+box-shadow: 0px 0px 5px 5px ; 
+
+}
+
+.body-box{
+   /*  box-sizing:content-box; */
+    box-sizing: border-box;
+    border-color: lightblue;
+    border: solid;
+    padding-bottom: 23rem;
+    border-style: double;
+    width:25rem;
+    float: inline-start;
+    margin:-3.45rem auto;
+    font-size: 1.2rem;
+    color:black;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+   
+}
+
+#actor{
+    font-weight: 200;
+    text-decoration: underline;
+}
+
+#director {
+    text-align: right;
+    margin-top: -7rem;
+    text-decoration: underline;
+    
+}
+
+.crew{
+    text-align: right;
+}
+
+
+
+@media screen and (max-witdth: 500px) {
+.crew
+#actor
+#director
+.navbar-item
+#searchBar {
+    width: 70%
+}
+
+    
+}
