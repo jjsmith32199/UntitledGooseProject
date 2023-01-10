@@ -19,9 +19,19 @@ function queryOMDB(movieInput) {
 function renderPage(movie) {
     var titleElement = document.querySelector('.movieTitle');
     titleElement.textContent = movie.Title + " (" + movie.Year +")";
+
+    var actorList = document.querySelector('#cast');
+    var actorArray =  movie.Actors.split(',');
+        //console.log(actorArray);
+        //console.log(actorArray[0]);
+    for(var i=0; i < actorArray.length; i++){
+        var actor = document.createElement('li');
+        actor.textContent = actorArray[i].trim();
+        actorList.appendChild(actor);
+    }
+
+
 }
-
-
 
 
 form.addEventListener('submit', getUserInput);
