@@ -69,13 +69,14 @@ function queryOMDB(movieInput) {
             console.log(data);
             //console.log(data.Title);
             if(data.Error){ //check data.Error because 'movie not found' would still return data object instead of throwing it from condition response not ok.
-                movieTitleEl.innerHTML = "";
-                movieTitleEl.innerHTML = '<h3>No results found, search again!</h3>'; //WHEN the result is not found
+                
+                //movieTitleEl.innerHTML = "";
+                //movieTitleEl.innerHTML = '<h3>No results found, search again!</h3>'; //WHEN the result is not found
 
                 //Options for display 'no result found'
                 //1) Remove all of the contents one by one? (by setting element.textContent = "";)
                 //2) Initial webpage has empty body, but we create and element(title, director, actor, etc..) when we hit search button
-                //3) Any other idea..? 
+                //3) Or make <div> separately for no result? 
 
 
                 throw data;
