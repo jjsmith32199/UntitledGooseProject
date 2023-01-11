@@ -4,6 +4,7 @@ var watchListEl = document.querySelector('#watch-list');
 var bodyBoxEl = document.querySelector('.body-box');
 var trailerEl = document.querySelector('#trailer');
 var trailerBoxEl = document.querySelector('#trailer-box');
+var movieTitleEl = document.querySelector('.movieTitle');
 
 var watchlist = [];
 
@@ -28,7 +29,8 @@ function queryYoutube(movieTitle) {
 
                 trailerBoxEl.appendChild(sorry);
 
-                throw response.json();
+                //throw response.json();
+                throw new Error("Something went wrong or video not available");
             }
             return response.json();
         })
@@ -66,11 +68,21 @@ function queryOMDB(movieInput) {
         .then(function (data) {
             console.log(data);
             //console.log(data.Title);
+            if(data.Error){ //check data.Error because 'movie not found' would still return data object instead of throwing it from condition response not ok.
+                movieTitleEl.innerHTML = "";
+                movieTitleEl.innerHTML = '<h3>No results found, search again!</h3>'; //WHEN the result is not found
+
+                //Options for display 'no result found'
+                //1) Remove all of the contents one by one? (by setting element.textContent = "";)
+                //2) Initial webpage has empty body, but we create and element(title, director, actor, etc..) when we hit search button
+                //3) Any other idea..? 
+
+
+                throw data;
+            }
             renderPage(data);  
         })
         .catch(function (error) {
-            bodyBoxEl.innerHTML = "";
-            bodyBoxEl.innerHTML = '<h3>No results found, search again!</h3>'; //WHEN the result is not found
             console.error(error);
         });
 }
