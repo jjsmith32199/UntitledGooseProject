@@ -13,41 +13,50 @@
   <body>
     <nav class="'navbar">
   <div class="navbar-title">
-    <h1 id="pageAc">GMDB</h1>
-    <a class="navbar-item btn">Watch List</a>
+    <h1 id="pageAc">CinEvents</h1>
+    <button class="navbar-item watch-list-btn">Watch List</button>
     <form id="searchForm">
     <input id="searchBar" type="text" placeholder="What do you want to watch?" class="navbar-item">
-    <button id="submitButton" class="navbar-item">Enter</button>
+    <button id="submitButton" class="navbar-item">Search</button>
     </form>
   </div>
 </nav>
   <section class="body-box">
     <button id="add-watch-list">Add to Watch List</button>
     <h2 class="movieTitle py-6 my-8 mt-4 pb-5"></h2> 
-    <h2 id="actor">Starring</h2>
+    <article class="castCrew">
+    <h2 id="actor">Starring:</h2>
   
       <ul id="cast">
       </ul>
     
-    <h3 id="director">Director</h3>
+    <h3 id="director">Director:</h3>
     <ul id="crew"></ul>
+  </article>
     <div id="poster"> <!-- For Poster --> </div>
     
-    <div> <!-- For Trailer -->
-      <h3>TRAILER: </h3>
-      <div id="trailer-box">
-        <iframe id="trailer">TRAILER: </iframe>
-      </div>
-    </div> 
-
+  
   </section>
+  <div> <!-- For Trailer -->
+    <div id="trailer-box" class="hide">
+    <h3>TRAILER: </h3>
+     <iframe id="trailer" class="hide">TRAILER: </iframe>
+    </div>
+  </div> 
 
-  <section id="watch-list-box"> <!-- Watch List Body -->
+
+  <section id="watch-list-box" class="hide">Watch List:<!-- Watch List Body -->
     <ul id="watch-list">
-
     </ul>
   </section>
-    
+  <div id="currentEvents">Contemporary Events
+    <p class="fromWiki">Top Headlines from Wikipedia</p>
+    <ul id="newsPiece">
+      <a href=""></a>
+      <a href=""></a>
+      <a href=""></a>
+    </ul>
+  </div>
  
 
   <script src="./assets/js/script.js"></script>
