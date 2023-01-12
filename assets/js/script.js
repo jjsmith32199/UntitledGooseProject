@@ -85,8 +85,6 @@ function queryOMDB(movieInput) {
                 //2) Initial webpage has empty body, but we create and element(title, director, actor, etc..) when we hit search button
                 //3) Or make <div> separately for no result? 
 
-
-                throw data;
             }
             renderPage(data);  
         })
