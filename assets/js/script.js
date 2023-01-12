@@ -1,10 +1,16 @@
 var form = document.querySelector('#searchForm');
 var addWatchListEl = document.querySelector('#add-watch-list');
 var watchListEl = document.querySelector('#watch-list');
+var watchListBoxEl = document.querySelector('#watch-list-box');
 var bodyBoxEl = document.querySelector('.body-box');
 var trailerEl = document.querySelector('#trailer');
 var trailerBoxEl = document.querySelector('#trailer-box');
 var movieTitleEl = document.querySelector('.movieTitle');
+var watchListBtnEl = document.querySelector('.watch-list-btn');
+//For Modal
+var modal = document.querySelector('#myModal');
+var submitbuttonEl = document.querySelector('#submitButton');
+var closeEl = document.querySelector('.close'); 
 
 var watchlist = [];
 
@@ -69,7 +75,8 @@ function queryOMDB(movieInput) {
             console.log(data);
             //console.log(data.Title);
             if(data.Error){ //check data.Error because 'movie not found' would still return data object instead of throwing it from condition response not ok.
-                
+                modal.style.display = "block"; //show modal display if search result is not found
+
                 //movieTitleEl.innerHTML = "";
                 //movieTitleEl.innerHTML = '<h3>No results found, search again!</h3>'; //WHEN the result is not found
 
@@ -184,6 +191,28 @@ function addWatchList() {
         renderWatchList();
     }
 }
+
+
+//For watch list button (hide and display)
+watchListBtnEl.addEventListener('click', function(){
+    if(watchListBoxEl.classList.contains("hide")){
+        console.log(watchListBoxEl.classList.contains("hide"));
+        watchListBoxEl.setAttribute("class", "show");
+    } else{
+        watchListBoxEl.setAttribute("class", "hide");
+    }
+})
+
+//Modal: display hide
+closeEl.addEventListener('click', function(){
+    modal.style.display = "none";
+})
+
+window.addEventListener('click', function(event){
+    if(event.target == modal){
+        modal.style.display = "none";
+    }
+})
 
 form.addEventListener('submit', getUserInput);
 addWatchListEl.addEventListener('click', addWatchList);
