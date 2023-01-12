@@ -6,21 +6,23 @@ html, body{
 }
 
 .movieTitle{
+   display:flex;
    text-align: center;
    font-size:30px ;
    background-color: lightblue;
-   border-radius: 17%;
-   border:solid;
-   border-color: black;
-   border-style: solid;
-   width: 25rem;
+   border-radius: 15%;
+   border:5px solid black;
+   width: 39.5rem;
    height: 0rem;
    text-decoration: underline;
    justify-content: center;
    color: black;
-   flex-wrap: wrap;
    flex-direction: column;
-   text-align: center;
+   font-style: italic;
+   
+   
+   
+  
 
   
 }
@@ -31,7 +33,7 @@ html, body{
     color: lightcyan;
     text-align: left;
     text-shadow: 5px 5px 5px black;
-    border:solid;
+   
     text-decoration: underline;
     flex-wrap: wrap;
     flex-direction: column;
@@ -45,47 +47,54 @@ html, body{
    left: 50%;
    margin-left: 5rem;
    top: -5rem;
-   flex-wrap: wrap;
-   flex-direction: column;
+   
 }
 
 #searchBar{
     flex-wrap: wrap;
     flex-direction: column;
     border-style: solid;
-    width: 15rem;
+    width: 18rem;
     border-color:black;
+    height: 3.3rem;
+    font-size: 20px;
+   
 }
-.btn{
-    border-radius: 0%;
-    border-color: black;
-    border: solid;
+.watch-list-btn, #add-watch-list, #submitButton{
+    border: 4px solid black;
     font-size: 1.3rem;
     background-color: lightblue;
     color: black;
     width: 12rem;
     text-align: center;
+   
 
 }
-.btn:hover{
-box-shadow: 0px 0px 5px 5px ; 
+.watch-list-btn:hover, #add-watch-list:hover, #submitButton:hover{
+    cursor: pointer;
+    background-color: aliceblue;
+    color: lightblue;
+    font-weight: 400%;
 
 }
 
 .body-box{
-   /*  box-sizing:content-box; */
+
     box-sizing: border-box;
-    border-color: lightblue;
-    border: solid;
-    padding-bottom: 23rem;
-    border-style: double;
+    border: 4px solid lightblue;
+    /* padding-bottom: 23rem; */
+    border-style: solid;
     width:25rem;
+    height: 50rem;
     float: inline-start;
     margin:-3.45rem auto;
     font-size: 1.2rem;
     color:black;
+    display: flex;
     flex-direction: column;
     flex-wrap: wrap;
+    width: 40rem ;
+  
     
    
 }
@@ -93,32 +102,94 @@ box-shadow: 0px 0px 5px 5px ;
 #actor{
     font-weight: 200;
     text-decoration: underline;
+    margin-left: 20px;
 }
 
 #director {
-    text-align: right;
+    /* /* text-align: center;
     margin-top: -7rem;
-    text-decoration: underline;
+    margin-left: 2.7rem; */
+    text-decoration: underline; 
     
 }
-
+#cast{
+    justify-content: center;
+    margin-left: 10px;
+    
+}
 #crew{
-    text-align: right;
+    text-align: center;
+    margin-left: 10px;
+}
+.castCrew{
+    display: flex;
+    justify-content: space-around;
+
+}
+#poster{
+    justify-content: center;
+    align-items: center;
+    padding-left: 3.5rem;
+    padding-top: 1rem;
+    width: auto;
+    height: fit-content;
+    
 }
 
 #watch-list-box{
     float: left;
-    border: 5px solid white;
-    color: white;
+    border: 3px double lightblue;
+    color: black;
+    margin-left: 24rem;
+    margin-top: -25rem;
+    padding: 8px;
+    width: 250px;
+    font-size: 20px;
+
+   
+ 
+}
+#trailer-box, #currentEvents{
+    border: 4px solid lightblue;
+    display: flex;
+    flex-direction: column;
+    width: 36rem;
+    height: 25rem;
+    text-align: center;
+    color: lightblue;
+   
+
+
+}
+#currentEvents{
+    margin-left: 66.6% ;
+    
 }
 
+#trailer-box{
+    margin-left: 66.6%;
+    margin-top: -30%;
 
-@media screen and (max-witdth: 500px) {
+}
+.fromWiki{
+    color: black;
+    text-decoration: underline;
+    font-size: 18px ;
+}
+
+/*  .hide{
+    display: none; 
+
+} */
+
+@media screen and (max-witdth: 1440px) {
 .crew
 #actor
 #director
 .navbar-item
-#searchBar {
+#searchBar
+#watch-list-box 
+#trailer-box{
     width: 70%
 }
 
