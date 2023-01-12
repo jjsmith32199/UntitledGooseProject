@@ -19,6 +19,16 @@
     <input id="searchBar" type="text" placeholder="What do you want to watch?" class="navbar-item">
     <button id="submitButton" class="navbar-item">Search</button>
     </form>
+    <!-- Modal -->
+    <div id="myModal" class="modal">
+
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Movie not found! Please search again!</p>
+      </div>
+
+    </div>
+    <!--  -->
   </div>
 </nav>
   <section class="body-box">
@@ -38,17 +48,18 @@
   
   </section>
   <div> <!-- For Trailer -->
-    <div id="trailer-box" class="hide">
+    <div id="trailer-box">
     <h3>TRAILER: </h3>
-     <iframe id="trailer" class="hide">TRAILER: </iframe>
+     <iframe id="trailer">TRAILER: </iframe>
     </div>
   </div> 
 
 
-  <section id="watch-list-box" class="hide">Watch List:<!-- Watch List Body -->
+  <section id="watch-list-box">Watch List:<!-- Watch List Body -->
     <ul id="watch-list">
     </ul>
   </section>
+
   <div id="currentEvents">Contemporary Events
     <p class="fromWiki">Top Headlines from Wikipedia</p>
     <ul id="newsPiece">
