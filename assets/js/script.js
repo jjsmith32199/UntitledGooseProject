@@ -12,9 +12,12 @@ var modal = document.querySelector('#myModal');
 var submitbuttonEl = document.querySelector('#submitButton');
 var closeEl = document.querySelector('.close'); 
 
+var bodyEl = document.querySelector('#body');
+
 var watchlist = [];
 
 //*Fetch Youtube API*//
+/*Note: Make sure to add s to http (https) to make resource secure*/ 
 function queryYoutube(movieTitle) {
 
     movieTitle.split(' ').join('%20'); // %20 = space
@@ -44,7 +47,7 @@ function queryYoutube(movieTitle) {
             console.log(data);
             var videoId = data.items[0].id.videoId; //grab the video id of the first result of searched videos
 
-            var src = "http://www.youtube.com/embed/" + videoId;
+            var src = "https://www.youtube.com/embed/" + videoId;
 
             trailerEl.setAttribute("src", src);
             trailerEl.setAttribute("width", "560");
@@ -62,7 +65,7 @@ function queryYoutube(movieTitle) {
 //*Fetch OMDB API*//
 function queryOMDB(movieInput) {
 
-    var omdbStub = "http://www.omdbapi.com/?apikey=593dbd9c&t=" + movieInput;
+    var omdbStub = "https://www.omdbapi.com/?apikey=593dbd9c&t=" + movieInput;
 
     fetch(omdbStub)
         .then(function (response) {
@@ -76,15 +79,7 @@ function queryOMDB(movieInput) {
             //console.log(data.Title);
             if(data.Error){ //check data.Error because 'movie not found' would still return data object instead of throwing it from condition response not ok.
                 modal.style.display = "block"; //show modal display if search result is not found
-
-                //movieTitleEl.innerHTML = "";
-                //movieTitleEl.innerHTML = '<h3>No results found, search again!</h3>'; //WHEN the result is not found
-
-                //Options for display 'no result found'
-                //1) Remove all of the contents one by one? (by setting element.textContent = "";)
-                //2) Initial webpage has empty body, but we create and element(title, director, actor, etc..) when we hit search button
-                //3) Or make <div> separately for no result? 
-
+                throw new Error("Movie is not found!"); 
             }
             renderPage(data);  
         })
@@ -196,8 +191,10 @@ watchListBtnEl.addEventListener('click', function(){
     if(watchListBoxEl.classList.contains("hide")){
         console.log(watchListBoxEl.classList.contains("hide"));
         watchListBoxEl.setAttribute("class", "show");
+        bodyEl.style.justifyContent =  "space-evenly";
     } else{
         watchListBoxEl.setAttribute("class", "hide");
+        bodyEl.style.justifyContent =  "center";
     }
 })
 

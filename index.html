@@ -1,75 +1,94 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Untitled Goose Movie Database</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <link rel="stylesheet" href="./assets/css/style.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Untitled Goose Movie Database</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+  <link rel="stylesheet" href="./assets/css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
-  </head>
-  <body>
-    <nav class="'navbar">
-  <div class="navbar-title">
-    <h1 id="pageAc">CinEvents</h1>
-    <button class="navbar-item watch-list-btn">Watch List</button>
-    <form id="searchForm">
-    <input id="searchBar" type="text" placeholder="What do you want to watch?" class="navbar-item">
-    <button id="submitButton" class="navbar-item">Search</button>
-    </form>
-    <!-- Modal -->
-    <div id="myModal" class="modal">
+</head>
 
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Movie not found! Please search again!</p>
+<body>
+  <nav class="'navbar">
+    <div class="navbar-title">
+      <h1 id="pageAc">CinEvents</h1>
+
+      <div id="navbar-items">
+        <button class="navbar-item watch-list-btn">Watch List</button>
+
+        <form id="searchForm" class="navbar-item">
+          <input id="searchBar" type="text" placeholder="What do you want to watch?">
+          <button id="submitButton">Search</button>
+        </form>
+
+      </div>
+
+      <!-- Modal -->
+      <div id="myModal" class="modal">
+
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Movie not found! Please search again!</p>
+        </div>
+
+      </div>
+      <!--  -->
+    </div>
+  </nav>
+
+  <div id="body">
+
+    <div id="left-side">
+      <section id="watch-list-box" class="hide">Watch List:<!-- Watch List Body -->
+        <ul id="watch-list">
+        </ul>
+      </section>
+    </div>
+
+    <section class="body-box">
+      <button id="add-watch-list">Add to Watch List</button>
+      <h2 class="movieTitle py-6 my-8 mt-4 pb-5"></h2>
+      <article class="castCrew">
+        <h2 id="actor">Starring:</h2>
+
+        <ul id="cast">
+        </ul>
+
+        <h3 id="director">Director:</h3>
+        <ul id="crew"></ul>
+      </article>
+      <div id="poster"> <!-- For Poster --> </div>
+
+
+    </section>
+
+    <div id="right-side"> <!-- Block for trailer and contemporary events -->
+
+      <div> <!-- For Trailer -->
+        <div id="trailer-box">
+          <h3>TRAILER: </h3>
+          <iframe id="trailer">TRAILER: </iframe>
+        </div>
+      </div>
+
+      <div id="currentEvents">Contemporary Events
+        <p class="fromWiki">Top Headlines from Wikipedia</p>
+        <ul id="newsPiece">
+          <a href=""></a>
+          <a href=""></a>
+          <a href=""></a>
+        </ul>
       </div>
 
     </div>
-    <!--  -->
+
   </div>
-</nav>
-  <section class="body-box">
-    <button id="add-watch-list">Add to Watch List</button>
-    <h2 class="movieTitle py-6 my-8 mt-4 pb-5"></h2> 
-    <article class="castCrew">
-    <h2 id="actor">Starring:</h2>
-  
-      <ul id="cast">
-      </ul>
-    
-    <h3 id="director">Director:</h3>
-    <ul id="crew"></ul>
-  </article>
-    <div id="poster"> <!-- For Poster --> </div>
-    
-  
-  </section>
-  <div> <!-- For Trailer -->
-    <div id="trailer-box">
-    <h3>TRAILER: </h3>
-     <iframe id="trailer">TRAILER: </iframe>
-    </div>
-  </div> 
-
-
-  <section id="watch-list-box">Watch List:<!-- Watch List Body -->
-    <ul id="watch-list">
-    </ul>
-  </section>
-
-  <div id="currentEvents">Contemporary Events
-    <p class="fromWiki">Top Headlines from Wikipedia</p>
-    <ul id="newsPiece">
-      <a href=""></a>
-      <a href=""></a>
-      <a href=""></a>
-    </ul>
-  </div>
- 
 
   <script src="./assets/js/script.js"></script>
-  </body>
+</body>
+
 </html>
