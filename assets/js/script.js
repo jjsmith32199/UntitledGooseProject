@@ -93,6 +93,43 @@ function queryOMDB(movieInput) {
         });
 }
 
+function getWikiArticle(year) {
+    //var wikiUrl = "https://en.wikinews.org/w/api.php?origin=*&action=query&generator=search&format=json&gsrlimit=3&gsrqiprofile=popular_inclinks_pv&prop=info&inprop=url&gsrsearch=" + year;
+    
+    var wikiUrl = "https://en.wikinews.org/w/api.php?origin=*&action=query&list=search&format=json&srlimit=5&srsearch=intitle:" + year;
+
+    //var wikiUrl = "https://en.wikinews.org/w/api.php?origin=*&action=opensearch&limit=2&search=" + year;
+
+    //console.log(year);
+
+    fetch(wikiUrl)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (data) {
+            console.log(data);
+            
+            for(var i = 0; i < data.query.search.length; i++){
+                var articleTitle = data.query.search[i].title;
+                console.log(articleTitle);
+
+                var articleUrl = "https://en.wikinews.org/wiki/" + articleTitle.split(' ').join('_');
+                
+                console.log(articleUrl);
+
+                var articleList = document.querySelector('#newsPiece');
+
+                var a = document.createElement('a');
+                var article = document.createElement('li');
+                a.textContent = articleTitle;
+                a.setAttribute('href', articleUrl);
+                article.appendChild(a);
+                articleList.appendChild(article);
+            }
+        })
+
+}
+
 //*Rendering Movie Info from OMDB*//
 function renderPage(movie) {
     var titleElement = document.querySelector('.movieTitle');
@@ -134,6 +171,9 @@ function renderPage(movie) {
 
     //TRAILER (YOUTUBE API)
     queryYoutube(movieTitleYear);
+
+    //CALLS WIKI Function
+    getWikiArticle(movie.Year);
 }
 
 function getUserInput(event) {
