@@ -1,5 +1,3 @@
-/*For Navbar: either make that div (navbar whole thing) flex, direction row OR make container for individual form buttons & etc, put them together and make them inline block */
-
 #navbar-items{
     display: flex;
 }
