@@ -34,6 +34,7 @@ function queryYoutube(movieTitle) {
                 sorry.setAttribute("src", src);
                 sorry.setAttribute("width", "300");
                 sorry.setAttribute("height", "300");
+                sorry.setAttribute("id", "sorry");
 
                 trailerBoxEl.appendChild(sorry);
 
@@ -79,14 +80,7 @@ function queryOMDB(movieInput) {
             if(data.Error){ //check data.Error because 'movie not found' would still return data object instead of throwing it from condition response not ok.
                 modal.style.display = "block"; //show modal display if search result is not found
 
-                //movieTitleEl.innerHTML = "";
-                //movieTitleEl.innerHTML = '<h3>No results found, search again!</h3>'; //WHEN the result is not found
-
-                //Options for display 'no result found'
-                //1) Remove all of the contents one by one? (by setting element.textContent = "";)
-                //2) Initial webpage has empty body, but we create and element(title, director, actor, etc..) when we hit search button
-                //3) Or make <div> separately for no result? 
-
+                throw new Error("Movie is not found!");
             }
             renderPage(data);  
         })
@@ -165,6 +159,7 @@ function renderPage(movie) {
     var img = document.createElement('img');
 
     img.setAttribute("src", movie.Poster);
+    img.setAttribute("id", "poster");
 
     poster.appendChild(img);
 
