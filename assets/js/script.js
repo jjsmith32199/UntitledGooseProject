@@ -95,14 +95,15 @@ function queryOMDB(movieInput) {
         });
 }
 
+//Gets article info for wikipedia articles and appends them to page as links
 function getWikiArticle(year) {
     //var wikiUrl = "https://en.wikinews.org/w/api.php?origin=*&action=query&generator=search&format=json&gsrlimit=3&gsrqiprofile=popular_inclinks_pv&prop=info&inprop=url&gsrsearch=" + year;
     
-    var wikiUrl = "https://en.wikinews.org/w/api.php?origin=*&action=query&list=search&format=json&srlimit=5&srsearch=intitle:" + year;
+    //var wikiUrl = "https://en.wikinews.org/w/api.php?origin=*&action=query&list=search&format=json&srlimit=5&srqiprofile=popular_inclinks_pv&srsearch=intitle:" + year;
 
     //var wikiUrl = "https://en.wikinews.org/w/api.php?origin=*&action=opensearch&limit=2&search=" + year;
 
-    //console.log(year);
+    var wikiUrl = "https://en.wikipedia.org/w/api.php?origin=*&action=opensearch&format=json&search=" + year;
 
     fetch(wikiUrl)
         .then(function (response) {
@@ -110,8 +111,10 @@ function getWikiArticle(year) {
         })
         .then(function (data) {
             console.log(data);
-            
-            for(var i = 0; i < data.query.search.length; i++){
+
+            //for loop for appending each article using the intitle url
+            /*
+                for(var i = 0; i < data.query.search.length; i++){
                 var articleTitle = data.query.search[i].title;
                 console.log(articleTitle);
 
@@ -125,7 +128,25 @@ function getWikiArticle(year) {
                 a.setAttribute('href', articleUrl);
                 article.appendChild(a);
                 articleList.appendChild(article);
+            }*/
+
+            //for loop for appending the articles using the wikipedia url
+            for(var i = 0; i < data[1].length; i++){
+                var articleTitle = data[1][i];
+                console.log(articleTitle);
+
+                var articleUrl = data[3][i];
+                
+                console.log(articleUrl);
+
+                var a = document.createElement('a');
+                var article = document.createElement('li');
+                a.textContent = articleTitle;
+                a.setAttribute('href', articleUrl);
+                article.appendChild(a);
+                articleList.appendChild(article);
             }
+            
         })
 
 }
