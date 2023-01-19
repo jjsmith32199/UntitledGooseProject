@@ -21,7 +21,7 @@ In this project, the task is to build and create a real-world front-end applicat
 
 ```
 AS AN avid film lover,
-I WANT to be informed on the real-world historical context of  the film
+I WANT to be informed on the real-world historical context of the film
 SO THAT I [ ]
 ```
 
