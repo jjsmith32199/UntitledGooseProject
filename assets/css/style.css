@@ -24,11 +24,6 @@ html, body{
    flex-direction: column;
    font-style: italic;
    
-   
-   
-  
-
-  
 }
 
 #pageAc{
@@ -167,6 +162,7 @@ html, body{
     height: 25rem;
     text-align: center;
     color: lightblue;
+    justify-content: center;
    
 
     display: block;
@@ -323,4 +319,12 @@ html, body{
 #watch-list > li:hover {
     color: white;
     cursor: pointer;
+}
+
+a {
+    color:lightblue;
+}
+a:hover {
+    text-decoration: underline;
+    color: mediumaquamarine;
 }
