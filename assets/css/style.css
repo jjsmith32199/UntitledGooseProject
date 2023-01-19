@@ -272,3 +272,8 @@ html, body{
 
     
 }
+
+#watch-list > li:hover {
+    color: white;
+    cursor: pointer;
+}

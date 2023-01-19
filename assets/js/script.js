@@ -11,8 +11,8 @@ var watchListBtnEl = document.querySelector('.watch-list-btn');
 var modal = document.querySelector('#myModal');
 var submitbuttonEl = document.querySelector('#submitButton');
 var closeEl = document.querySelector('.close'); 
-
 var articleList = document.querySelector('#newsPiece');
+
 
 var watchlist = [];
 
@@ -278,3 +278,11 @@ window.addEventListener('click', function(event){
 form.addEventListener('submit', getUserInput);
 addWatchListEl.addEventListener('click', addWatchList);
 getWatchList();
+
+watchListEl.addEventListener("click", function(event) {
+    event.preventDefault;
+    var movie = event.target.innerHTML;
+    var title = movie.split('(')[0];
+
+    queryOMDB(title)
+})
