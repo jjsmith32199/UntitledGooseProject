@@ -25,7 +25,7 @@ function queryYoutube(movieTitle) {
     fetch(ytQueryUrl)
         .then(function (response) {
             if (!response.ok) {
-                console.log("couldn't find trailer for that movie");
+                //console.log("couldn't find trailer for that movie");
  
                 var sorry = document.createElement('img');
                 trailerBoxEl.innerHTML = "Sorry! Trailer is not found/available!"
@@ -74,8 +74,8 @@ function queryOMDB(movieInput) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
-            //console.log(data.Title);
+           
+           
             if(data.Error){ //check data.Error because 'movie not found' would still return data object instead of throwing it from condition response not ok.
                 modal.style.display = "block"; //show modal display if search result is not found
 
@@ -110,7 +110,7 @@ function getWikiArticle(year) {
             return response.json();
         })
         .then(function (data) {
-            console.log(data);
+            
 
             //for loop for appending each article using the intitle url
             /*
@@ -133,12 +133,7 @@ function getWikiArticle(year) {
             //for loop for appending the articles using the wikipedia url
             for(var i = 0; i < data[1].length; i++){
                 var articleTitle = data[1][i];
-                console.log(articleTitle);
-
                 var articleUrl = data[3][i];
-                
-                console.log(articleUrl);
-
                 var a = document.createElement('a');
                 var article = document.createElement('li');
                 a.textContent = articleTitle;
@@ -257,7 +252,7 @@ function addWatchList() {
 //For watch list button (hide and display)
 watchListBtnEl.addEventListener('click', function(){
     if(watchListBoxEl.classList.contains("hide")){
-        console.log(watchListBoxEl.classList.contains("hide"));
+        //console.log(watchListBoxEl.classList.contains("hide"));
         watchListBoxEl.setAttribute("class", "show");
     } else{
         watchListBoxEl.setAttribute("class", "hide");
