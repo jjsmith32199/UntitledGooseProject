@@ -301,7 +301,6 @@ html, body{
         width: 70%
     }
 
-
 }*/
 
 @media screen and (max-width: 1175px) {
@@ -318,4 +317,10 @@ html, body{
         left: 0;
         text-align: center;
     }
+    
+}
+
+#watch-list > li:hover {
+    color: white;
+    cursor: pointer;
 }
