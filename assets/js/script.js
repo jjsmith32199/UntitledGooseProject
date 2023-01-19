@@ -12,6 +12,8 @@ var modal = document.querySelector('#myModal');
 var submitbuttonEl = document.querySelector('#submitButton');
 var closeEl = document.querySelector('.close'); 
 
+var ySelector('#newsPiece');articleList = document.quer
+
 var watchlist = [];
 
 //*Fetch Youtube API*//
@@ -117,8 +119,6 @@ function getWikiArticle(year) {
                 
                 console.log(articleUrl);
 
-                var articleList = document.querySelector('#newsPiece');
-
                 var a = document.createElement('a');
                 var article = document.createElement('li');
                 a.textContent = articleTitle;
@@ -173,6 +173,8 @@ function renderPage(movie) {
     queryYoutube(movieTitleYear);
 
     //CALLS WIKI Function
+
+    articleList.innerHTML = "";
     getWikiArticle(movie.Year);
 }
 
