@@ -53,7 +53,7 @@ When user opens up the page, they can see the title on the top left, search bar 
 
 ![CinEvents Webpage with result.](./assets/images/CinEvents_Search.png)
 
-When user search movie, the page shows movie title, year, director(s), actors, video trailer, and comtemporary events those are related to its year.
+When user searches for a movie, the page shows movie title, year, director(s), actors, video trailer, and comtemporary events those are related to its year.
 
 ![Watch List for CinEvents Webpage.](./assets/images/CinEvents_Watch_list.png)
 
@@ -78,7 +78,7 @@ When user does certain amount of searches, Youtube Trailer will not be available
 
 * User can re-search about movie by clicking movie name from Watch List.
 
-* **Important Note: There is a quota limit for Youtube API.** After user doing certain amount of searches, Youtube trailer won't be available. (There will be error Code: 403, which is the request cannot be completed because it has exceeded quota.) If Youtube video trailer is not available due to server issue or fail to load due to quota limit, it will show error image and message saying, "Sorry! Trailer is not found/available!" 
+* **Important Note: There is a quota limit for Youtube API.** After user doing certain amount of searches, Youtube trailer won't be available. (There will be error Code: 403, which is the request cannot be completed because it has exceeded quota.) If Youtube video trailer is not available due to server issue or fail to load due to quota limit, the webpage's trailer box will show error image and message saying, "Sorry! Trailer is not found/available!" 
 
 
 ## Directions for Future Development
