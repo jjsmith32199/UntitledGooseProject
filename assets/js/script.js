@@ -47,7 +47,7 @@ function queryYoutube(movieTitle) {
             console.log(data);
             var videoId = data.items[0].id.videoId; //grab the video id of the first result of searched videos
 
-            var src = "http://www.youtube.com/embed/" + videoId;
+            var src = "https://www.youtube.com/embed/" + videoId;
 
             trailerEl.setAttribute("src", src);
             trailerEl.setAttribute("width", "560");
@@ -65,7 +65,7 @@ function queryYoutube(movieTitle) {
 //*Fetch OMDB API*//
 function queryOMDB(movieInput) {
 
-    var omdbStub = "http://www.omdbapi.com/?apikey=593dbd9c&t=" + movieInput;
+    var omdbStub = "https://www.omdbapi.com/?apikey=593dbd9c&t=" + movieInput;
 
     fetch(omdbStub)
         .then(function (response) {
