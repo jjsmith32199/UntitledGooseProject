@@ -75,7 +75,7 @@ function queryOMDB(movieInput) {
             return response.json();
         })
         .then(function (data) {
-           
+            console.log(data);
            
             if(data.Error){ //check data.Error because 'movie not found' would still return data object instead of throwing it from condition response not ok.
                 modal.style.display = "block"; //show modal display if search result is not found
@@ -174,7 +174,11 @@ function renderPage(movie) {
     poster.innerHTML = "";
     var img = document.createElement('img');
 
-    img.setAttribute("src", movie.Poster);
+    if(movie.Poster === "N/A"){ //If the searched result has no data available (N/A), it will say poster No Poster Available as movie.Poster is "N/A"
+        poster.textContent = "No Poster Available";
+    }else{
+        img.setAttribute("src", movie.Poster);
+    }
     img.setAttribute("id", "poster");
 
     poster.appendChild(img);
@@ -184,8 +188,7 @@ function renderPage(movie) {
     queryYoutube(movieTitleYear);
 
     //CALLS WIKI Function
-
-    articleList.innerHTML = "";
+    articleList.innerHTML = ""; //Clearing inner content of articleList before call getWikiArticle function
     getWikiArticle(movie.Year);
 }
 
@@ -247,7 +250,6 @@ function addWatchList() {
 //For watch list button (hide and display)
 watchListBtnEl.addEventListener('click', function(){
     if(watchListBoxEl.classList.contains("hide")){
-        //console.log(watchListBoxEl.classList.contains("hide"));
         watchListBoxEl.setAttribute("class", "show");
     } else{
         watchListBoxEl.setAttribute("class", "hide");
@@ -265,10 +267,12 @@ window.addEventListener('click', function(event){
     }
 })
 
+// EventListener for submitting form
 form.addEventListener('submit', getUserInput);
 addWatchListEl.addEventListener('click', addWatchList);
 getWatchList();
 
+// EventListener for re searching the movie from the watch list
 watchListEl.addEventListener("click", function(event) {
     event.preventDefault;
     var movie = event.target.innerHTML;
