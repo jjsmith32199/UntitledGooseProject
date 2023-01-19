@@ -12,7 +12,7 @@ var modal = document.querySelector('#myModal');
 var submitbuttonEl = document.querySelector('#submitButton');
 var closeEl = document.querySelector('.close'); 
 
-var ySelector('#newsPiece');articleList = document.quer
+var articleList = document.querySelector('#newsPiece');
 
 var watchlist = [];
 
