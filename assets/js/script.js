@@ -12,7 +12,7 @@ var modal = document.querySelector('#myModal');
 var submitbuttonEl = document.querySelector('#submitButton');
 var closeEl = document.querySelector('.close'); 
 
-var articleList = document.querySelector('#newsPiece');
+var ySelector('#newsPiece');articleList = document.quer
 
 var watchlist = [];
 
@@ -119,8 +119,6 @@ function getWikiArticle(year) {
                 
                 console.log(articleUrl);
 
-                
-
                 var a = document.createElement('a');
                 var article = document.createElement('li');
                 a.textContent = articleTitle;
@@ -175,6 +173,7 @@ function renderPage(movie) {
     queryYoutube(movieTitleYear);
 
     //CALLS WIKI Function
+
     articleList.innerHTML = "";
     getWikiArticle(movie.Year);
 }
